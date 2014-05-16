@@ -89,7 +89,7 @@ void paramInit(void)
   
   
   //Start the param task
-	xTaskCreate(paramTask, (const signed char * const)"PARAM",
+	xTaskCreate(paramTask, (const char * const)"PARAM",
 				    configMINIMAL_STACK_SIZE, NULL, /*priority*/1, NULL);
   
   //TODO: Handle stored parameters!

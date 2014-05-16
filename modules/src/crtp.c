@@ -74,9 +74,9 @@ void crtpInit(void)
   tmpQueue = xQueueCreate(CRTP_TX_QUEUE_SIZE, sizeof(CRTPPacket));
   rxQueue = xQueueCreate(CRTP_RX_QUEUE_SIZE, sizeof(CRTPPacket));
   /* Start Rx/Tx tasks */
-  xTaskCreate(crtpTxTask, (const signed char * const)"CRTP-Tx",
+  xTaskCreate(crtpTxTask, (const char * const)"CRTP-Tx",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/2, NULL);
-  xTaskCreate(crtpRxTask, (const signed char * const)"CRTP-Rx",
+  xTaskCreate(crtpRxTask, (const char * const)"CRTP-Rx",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/2, NULL);
   
   isInit = true;

@@ -142,7 +142,7 @@ void uartInit(void)
 
   vSemaphoreCreateBinary(waitUntilSendDone);
 
-  xTaskCreate(uartRxTask, (const signed char * const)"UART-Rx",
+  xTaskCreate(uartRxTask, (const char * const)"UART-Rx",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/2, NULL);
 
   packetDelivery = xQueueCreate(2, sizeof(CRTPPacket));

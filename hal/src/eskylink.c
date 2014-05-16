@@ -77,8 +77,7 @@ static void interruptCallback()
   //To unlock RadioTask
   xSemaphoreGiveFromISR(dataRdy, &xHigherPriorityTaskWoken);
 
-  if(xHigherPriorityTaskWoken)
-    vPortYieldFromISR();
+  portEND_SWITCHING_ISR(xHigherPriorityTaskWoken);
 }
 
 // 'Class' functions, called from callbacks
@@ -309,7 +308,7 @@ void eskylinkInit()
   eskylinkInitPairing();
 
     /* Launch the Radio link task */
-  xTaskCreate(eskylinkTask, (const signed char * const)"EskyLink",
+  xTaskCreate(eskylinkTask, (const char * const)"EskyLink",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/1, NULL);
 
   isInit = true;

@@ -209,7 +209,7 @@ void adcInit(void)
 
   adcQueue = xQueueCreate(1, sizeof(AdcGroup*));
 
-  xTaskCreate(adcTask, (const signed char * const)"ADC",
+  xTaskCreate(adcTask, (const char * const)"ADC",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/3, NULL);
 
   isInit = true;

@@ -154,7 +154,7 @@ void stabilizerInit(void)
   pitchRateDesired = 0;
   yawRateDesired = 0;
 
-  xTaskCreate(stabilizerTask, (const signed char * const)"STABILIZER",
+  xTaskCreate(stabilizerTask, (const char * const)"STABILIZER",
               2*configMINIMAL_STACK_SIZE, NULL, /*Piority*/2, NULL);
 
   isInit = TRUE;

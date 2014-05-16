@@ -65,7 +65,7 @@ static void systemTask(void *arg);
 /* Public functions */
 void systemLaunch(void)
 {
-  xTaskCreate(systemTask, (const signed char * const)"SYSTEM",
+  xTaskCreate(systemTask, (const char * const)"SYSTEM",
               2*configMINIMAL_STACK_SIZE, NULL, /*Piority*/2, NULL);
 
 }

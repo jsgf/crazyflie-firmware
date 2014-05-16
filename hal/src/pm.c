@@ -115,7 +115,7 @@ void pmInit(void)
   GPIO_InitStructure.GPIO_Pin = PM_GPIO_USB_CON;
   GPIO_Init(PM_GPIO_USB_CON_PORT, &GPIO_InitStructure);
   
-  xTaskCreate(pmTask, (const signed char * const)"PWRMGNT",
+  xTaskCreate(pmTask, (const char * const)"PWRMGNT",
               configMINIMAL_STACK_SIZE, NULL, /*priority*/3, NULL);
   
   isInit = true;

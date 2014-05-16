@@ -168,7 +168,7 @@ void ledseqInit()
   
   //Init the soft timers that runs the led sequences for each leds
   for(i=0; i<LED_NUM; i++)
-    timer[i] = xTimerCreate((const signed char *)"ledseqTimer", M2T(1000), pdFALSE, (void*)i, runLedseq);
+    timer[i] = xTimerCreate((const char *)"ledseqTimer", M2T(1000), pdFALSE, (void*)i, runLedseq);
 
   vSemaphoreCreateBinary(ledseqSem);
   
